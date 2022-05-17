@@ -1,0 +1,544 @@
+/*
+https://github.com/Hanul/sky-css-base
+v0.0.1 | 20210109
+Author: Sim Young Jae
+License: MIT
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*,
+*:focus {
+  outline: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  cursor: pointer;
+}
+button,
+input {
+  border: none;
+}
+[hidden] {
+  display: none !important;
+}
+[contenteditable] {
+  -webkit-tap-highlight-color: transparent;
+}
+.float-wrapper:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@font-face {
+  font-family: 'NanumBarunpen';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arthead FREE";
+  src: url("font/Arthead-Regular FREE"), format("woff2");
+}
+@font-face {
+  font-family: "MartelSans Regular";
+  src: url("font/MartelSans-Regular"), format("woff");
+}
+body {
+  margin: auto;
+  background: #000000;
+  color: #FFFFFF;
+  font-family: 'Arthead FREE';
+}
+.pc-menu {
+  flex-grow: 1;
+}
+.pc-menu > ul {
+  display: flex;
+  justify-content: space-around;
+}
+.pc-menu > ul > li {
+  display: flex;
+}
+.pc-menu > ul > li > a {
+  font-weight: 700;
+  font-size: 20px;
+  color: inherit;
+  text-decoration: inherit;
+}
+.pc-menu > ul > li > a:hover {
+  color: #FFF200;
+}
+.mobile-menu {
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+}
+.mobile-menu > ul > li > a {
+  display: block;
+  padding: 12px 5px;
+  font-size: 0.825rem;
+}
+.mobile-menu > ul > li > a:hover {
+  color: #FFF200;
+}
+.mobile-menu > ul > li > a:active {
+  color: #FFF200;
+}
+.mobile-menu > ul > li > ul {
+  margin-left: 10px;
+}
+.mobile-menu > ul > li > ul > li > a {
+  display: block;
+  padding: 8px 5px;
+  color: #ccc;
+}
+.mobile-menu > ul > li > ul > li > a:hover {
+  color: #FFF200;
+}
+.mobile-menu > ul > li > ul > li > a:active {
+  color: #FFF200;
+}
+.mobile-menu > ul > li > ul > li.parent {
+  display: none;
+}
+.mobile-menu > .user-menu {
+  margin: auto;
+  margin-top: 16px;
+}
+.user-menu > .connect-wallet,
+.user-menu .wallet-address {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 8px 16px;
+  color: #FFF200;
+  border: 1px solid #FFF200;
+  border-radius: 2px;
+}
+.user-menu > .connect-wallet:hover,
+.user-menu .wallet-address:hover {
+  background-color: rgba(177, 156, 118, 0.2);
+}
+.user-menu > .wallet-address {
+  position: relative;
+  cursor: pointer;
+}
+.user-menu > .wallet-address > ul {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 100px;
+  display: none;
+  padding: 10px 0;
+}
+.user-menu > .wallet-address > ul > li > a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.user-menu > .wallet-address > ul > li > a:hover {
+  color: #FFF200;
+}
+.user-menu > .wallet-address > ul > li > a:active {
+  color: #FFF200;
+}
+.user-menu > .wallet-address:hover > ul {
+  display: block;
+}
+.user-menu > ul {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.user-menu > ul > li > a {
+  display: block;
+  padding: 8px 5px;
+  color: #ccc;
+  text-decoration: inherit;
+}
+.user-menu > ul > li > a:hover {
+  color: #FFF200;
+}
+.user-menu > ul > li > a:active {
+  color: #FFF200;
+}
+.layout {
+  width: 100%;
+}
+.layout > header {
+  display: block;
+  background: #000000;
+  position: sticky;
+  justify-items: center;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+@media only screen and (max-width: 719px) {
+  .layout > header {
+    height: auto;
+  }
+}
+.layout > header > .nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  padding: 40px 30px;
+}
+.layout > header > .nav > .logo {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 10%;
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .nav > .logo {
+    display: block;
+    margin-right: 0;
+    flex-grow: 1;
+  }
+}
+.layout > header > .nav > .logo > a > img {
+  width: 111px;
+  height: 23px;
+}
+.layout > header > .nav > .menu-button {
+  float: right;
+  display: none;
+  padding: 10px;
+  color: #fff;
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .nav > .menu-button {
+    max-height: 30px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .nav > .pc-menu {
+    display: none;
+  }
+}
+.layout > header > .nav > .right {
+  display: flex;
+  align-items: center;
+}
+.layout > header > .nav > .right:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.layout > header > .nav > .right > .user-menu {
+  float: right;
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .nav > .right > .user-menu {
+    display: none;
+  }
+}
+.layout > header > .nav > .right > .menu-button {
+  float: right;
+  display: none;
+  padding: 10px;
+}
+@media only screen and (max-width: 719px) {
+  .layout > header > .nav > .right > .menu-button {
+    display: block;
+  }
+}
+.layout > main {
+  max-width: 1440px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: auto;
+  padding: 40px 30px;
+}
+@media only screen and (max-width: 719px) {
+  .layout > main {
+    padding: 8px;
+  }
+}
+.layout > footer > section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.layout > footer > section > a {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 41px;
+  padding: 40px 30px;
+  color: white;
+}
+.layout > footer > section > a:hover {
+  color: #FFF200;
+}
+.layout > footer > section > hr {
+  border: 0;
+  border-radius: 2px;
+  width: 2px;
+  height: 14px;
+  color: #fff;
+  background-color: #fff;
+}
+.home-view > section > .exhibition-container {
+  display: flex;
+}
+.home-view > section > .exhibition-container > .content {
+  margin-left: 70px;
+}
+.home-view > section > .exhibition-container > .content > h2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 90px;
+  color: #FFF200;
+}
+.home-view > section > .exhibition-container > .content > h3 {
+  font-family: 'MartelSans Regular';
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  margin-top: 16px;
+}
+.home-view > section > .exhibition-container > .content > h4 {
+  font-family: 'MartelSans Regular';
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  margin-top: 32px;
+  color: #FFF200;
+}
+.home-view > section > .exhibition-container > .content > p {
+  margin-top: 100px;
+  font-family: 'Martel Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+.home-view > section > .artists-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.home-view > section > .artists-container > h2 {
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 90px;
+  color: #FFF200;
+}
+.home-view > section > .artists-container > .artists-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 70px;
+  margin-top: 70px;
+}
+.home-view > section > .artists-container > .artists-list > .image-container {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFF200;
+}
+.home-view > section > .display-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.home-view > section > .display-container > h2 {
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 90px;
+  color: #FFF200;
+}
+.home-view > section > .display-container > .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.home-view > section > .display-container > .row > .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+.home-view > section > .display-container > .row > .column > img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+.home-view > section > .irl-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.home-view > section > .irl-container > h2 {
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 90px;
+  color: #FFF200;
+}
+.home-view > section > .irl-container > .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.home-view > section > .irl-container > .row > .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+.home-view > section > .irl-container > .row > .column > img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+

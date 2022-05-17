@@ -1,0 +1,128 @@
+.layout {
+    width: 100%;
+
+    >header {
+        display      : block;
+        background   : #000000;
+        position     : sticky;
+        justify-items: center;
+        left         : 0;
+        top          : 0;
+        z-index      : 999;
+
+        @media @phone {
+            height: auto;
+        }
+
+        >.nav {
+            display    : flex;
+            flex-wrap  : wrap;
+            align-items: center;
+            margin     : auto;
+            padding    : 40px 30px;
+
+            >.logo {
+                display        : flex;
+                justify-content: space-around;
+                margin-right   : 10%;
+
+                @media @phone {
+                    display     : block;
+                    margin-right: 0;
+                    flex-grow   : 1;
+                }
+
+                >a {
+                    >img {
+                        width : 111px;
+                        height: 23px;
+                    }
+                }
+            }
+
+            >.menu-button {
+                float  : right;
+                display: none;
+                padding: 10px;
+                color  : #fff;
+
+                @media @phone {
+                    max-height: 30px;
+                    display   : block;
+                }
+            }
+
+            >.pc-menu {
+                @media @phone {
+                    display: none;
+                }
+            }
+
+            >.right {
+                display    : flex;
+                align-items: center;
+                .float-wrapper();
+
+                >.user-menu {
+                    float: right;
+
+                    @media @phone {
+                        display: none;
+                    }
+                }
+
+                >.menu-button {
+                    float  : right;
+                    display: none;
+                    padding: 10px;
+
+                    @media @phone {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    >main {
+        max-width     : 1440px;
+        display       : flex;
+        min-height    : 100vh;
+        flex-direction: column;
+        margin        : auto;
+        padding       : 40px 30px;
+
+        @media @phone {
+            padding: 8px;
+        }
+    }
+
+    >footer {
+        >section {
+            display    : flex;
+            align-items: center;
+            text-align : center;
+
+            >a {
+                font-weight: 700;
+                font-size  : 25px;
+                line-height: 41px;
+                padding    : 40px 30px;
+                color      : white;
+
+                &:hover {
+                    color: #FFF200;
+                }
+            }
+
+            >hr {
+                border          : 0;
+                border-radius   : 2px;
+                width           : 2px;
+                height          : 14px;
+                color           : #fff;
+                background-color: #fff;
+            }
+        }
+    }
+}
