@@ -1,10 +1,12 @@
 import { DomNode, el } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
+import artistJson from "./artists.json";
 import Layout from "./Layout";
 
 export default class Home implements View {
 
     private container: DomNode;
+    private artistList: DomNode;
 
     constructor() {
         Layout.current.title = "Meet Connect Play with";
@@ -12,6 +14,10 @@ export default class Home implements View {
             el("section",
                 el(".exhibition-container",
                     el("img", { src: "/images/view/poster.png", alt: "nft exhibition poster" }),
+                    el(".mobile-container",
+                        el("h2", "KLUBS \n NFT\n Exhibition"),
+                        el("img", { src: "/images/view/poster.png", alt: "nft exhibition poster" }),
+                    ),
                     el(".content",
                         el("h2", "NFT Exhibition"),
                         el("h3", "유니스버스와 메타버스\n한국과 프랑스를 잇는 NFT 전시 '연등회'"),
@@ -21,49 +27,71 @@ export default class Home implements View {
                 ),
                 el(".artists-container",
                     el("h2", "Artists"),
-                    el(".artists-list",
-                        el(".image-container",
-                            el("img", { src: "/images/view/artists-mock.png", alt: "Artist" }),
-                            el("p", "Artist Name"),
-                        ),
-                    ),
+                    this.artistList = el(".artists-list"),
                 ),
-                el(".display-container",
-                    el("h2", "Display 1"),
-                    el(".row",
-                        el(".column",
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                        ),
-                        el(".column",
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                        ),
-                    ),
-                ),
-                el(".irl-container",
-                    el("h2", "IRL"),
-                    el(".row",
-                        el(".column",
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                        ),
-                        el(".column",
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                            el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
-                        ),
-                    ),
-                ),
+                // el(".display-container",
+                //     el("h2", "Display 1"),
+                //     el(".row",
+                //         el(".column",
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //         ),
+                //         el(".column",
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //         ),
+                //     ),
+                // ),
+                // el(".irl-container",
+                //     el("h2", "IRL"),
+                //     el(".row",
+                //         el(".column",
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //         ),
+                //         el(".column",
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //             el("img", { src: "/images/view/gallery-mock.png", alt: "gallery-mock" }),
+                //         ),
+                //     ),
+                // ),
             ),
         ));
+        this.init();
+    }
+
+    private init(): void {
+
+        artistJson.map((data, index) => {
+            let videoDisplay: DomNode<HTMLVideoElement>
+
+            this.artistList.append(
+                el("a", { href: data.url },
+                    el(".image-container",
+                        videoDisplay = el("video.art", { loop: "true", preload: "none" },
+                            el("source", { src: "/images/view/video-mock.mp4", type: "video/mp4" })
+                        ),
+                        el("p", data.name),
+                    ),
+                ),
+            );
+
+            videoDisplay.style({
+                "background-image": `url("${data.image}")`,
+            });
+
+            videoDisplay.onDom("mouseover", () => {
+                videoDisplay.domElement.play();
+            });
+        });
     }
 
     public changeParams(params: ViewParams, uri: string): void { }
