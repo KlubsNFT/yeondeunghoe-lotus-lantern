@@ -7,6 +7,7 @@ export default class Home implements View {
 
     private container: DomNode;
     private artistList: DomNode;
+    private misangList: DomNode;
 
     constructor() {
         Layout.current.title = msg("HOME_TITLE");
@@ -28,6 +29,7 @@ export default class Home implements View {
                 el(".artists-container",
                     el("h2", msg("ARTISTS_TITLE")),
                     this.artistList = el(".artists-list"),
+                    this.misangList = el(".misang-list"),
                 ),
                 // el(".display-container",
                 //     el("h2", "Display 1"),
@@ -92,6 +94,32 @@ export default class Home implements View {
             videoDisplay.onDom("mouseover", () => {
                 videoDisplay.domElement.play();
             });
+        });
+
+        this.loadMisang();
+    }
+
+    private loadMisang(): void {
+        let videoDisplay: DomNode<HTMLVideoElement>
+
+        this.misangList.append(
+            el("a.misang-container", { href: "https://mrmisang.com/" },
+                el(".image-container",
+                    videoDisplay = el("video.art", { loop: "true", preload: "none" },
+                        el("source", { src: "https://storage.googleapis.com/klubs/lotuslight/screen_final/mr.misang_odddream.mp4", type: "video/mp4" })
+                    ),
+                    el("p", msg("ARTISTS_TITLE31")),
+                ),
+            ),
+        );
+
+        videoDisplay.style({
+            "background-image": `url("/images/view/mrMisang.jpg")`,
+            "background-size": "contain"
+        });
+
+        videoDisplay.onDom("mouseover", () => {
+            videoDisplay.domElement.play();
         });
     }
 

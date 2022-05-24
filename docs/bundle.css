@@ -586,6 +586,46 @@ body {
     height: 230px;
   }
 }
+.home-view > section > .artists-container > .misang-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+  margin-top: 70px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > section > .artists-container > .misang-list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}
+.home-view > section > .artists-container > .misang-list > a {
+  text-decoration: none;
+}
+.home-view > section > .artists-container > .misang-list > a > .image-container {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFF200;
+  width: 545px;
+  height: 387px;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > section > .artists-container > .misang-list > a > .image-container {
+    width: 100%;
+    padding: 8px;
+  }
+}
+.home-view > section > .artists-container > .misang-list > a > .image-container > .art {
+  cursor: pointer;
+  width: 545px;
+  height: 387px;
+  border: solid 1px #FFF200;
+}
+@media only screen and (max-width: 719px) {
+  .home-view > section > .artists-container > .misang-list > a > .image-container > .art {
+    width: 100%;
+  }
+}
 .home-view > section > .display-container {
   display: flex;
   flex-direction: column;
