@@ -77,7 +77,7 @@ export default class Home implements View {
                 el("a", { href: data.url },
                     el(".image-container",
                         videoDisplay = el("video.art", { loop: "true", preload: "none" },
-                            el("source", { src: "/images/view/video-mock.mp4", type: "video/mp4" })
+                            el("source", { src: data.video, type: "video/mp4" })
                         ),
                         el("p", msg(data.name)),
                     ),
@@ -86,6 +86,7 @@ export default class Home implements View {
 
             videoDisplay.style({
                 "background-image": `url("${data.image}")`,
+                "background-size": "contain"
             });
 
             videoDisplay.onDom("mouseover", () => {
