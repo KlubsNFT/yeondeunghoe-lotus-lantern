@@ -388,6 +388,13 @@ body {
     display: block;
   }
 }
+.layout > header > .nav > .right > .language-select {
+  font-family: "Arthead FREE";
+  background-color: #000;
+  color: #FFF200;
+  border: none;
+  font-size: 18px;
+}
 .layout > main {
   max-width: 1440px;
   display: flex;

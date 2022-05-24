@@ -1,4 +1,4 @@
-import { BodyNode, DomNode, el } from "skydapp-browser";
+import { BodyNode, BrowserInfo, DomNode, el } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
 import MobileMenu from "../component/shared/menu/MobileMenu";
 import PCMenu from "../component/shared/menu/PCMenu";
@@ -11,7 +11,7 @@ export default class Layout implements View {
 
     constructor() {
         Layout.current = this;
-
+        let select: DomNode<HTMLSelectElement>;
         BodyNode.append(
             (this.container = el(".layout",
                 el("header",
@@ -29,6 +29,16 @@ export default class Layout implements View {
                                     new MobileMenu({ left: rect.right - 170, top: rect.bottom }).appendTo(BodyNode);
                                 },
                             }),
+                            select = el("select.language-select",
+                                el("option", "🇰🇷 KOR", { value: "ko" }),
+                                el("option", "🇺🇸 ENG", { value: "en" }),
+                                el("option", "🇫🇷 FRA", { value: "fr" }),
+                                {
+                                    change: () => {
+                                        BrowserInfo.changeLanguage(select.domElement.value);
+                                    },
+                                },
+                            ),
                         ),
                     ),
                 ),
@@ -52,6 +62,7 @@ export default class Layout implements View {
                 ),
             )),
         );
+        select.domElement.value = BrowserInfo.language;
     }
 
     public set title(title: string) {
