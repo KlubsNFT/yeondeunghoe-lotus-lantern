@@ -19,7 +19,7 @@
     },
     {
         "name": "ARTISTS_TITLE4",
-        "image": "/images/view/MaisonClone.jpg",
+        "image": "/images/view/maisonClone.jpg",
         "url": "https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/59332569859245250467710864526231641267094961992289494027634540271720279834625",
         "video": "https://storage.googleapis.com/klubs/lotuslight/1/4.maisonclone%20-%20ange_des_cieux.mp4"
     },
@@ -73,7 +73,7 @@
     },
     {
         "name": "ARTISTS_TITLE13",
-        "image": "/images/view/mojunseok.jpg",
+        "image": "/images/view/moJunseok.jpg",
         "url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/46960980745860177354113350008680032002521340618329307012566455269216630079489",
         "video": "https://storage.googleapis.com/klubs/lotuslight/3/3.mo_junseok_traverse%CC%81e_2022.mp4"
     },
@@ -91,7 +91,7 @@
     },
     {
         "name": "ARTISTS_TITLE16",
-        "image": "/images/view/hgkim.jpg",
+        "image": "/images/view/hgKim.jpg",
         "url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/51288144808447385202787344314520516329064678535893038662670793219433597763585",
         "video": "https://storage.googleapis.com/klubs/lotuslight/4/1.hgkIm_untitled.mp4"
     },
@@ -157,7 +157,7 @@
     },
     {
         "name": "ARTISTS_TITLE27",
-        "image": "/images/view/joyjo.jpg",
+        "image": "/images/view/joyJo.jpg",
         "url": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/57489553260171343215125508702218170143767996152435246486134185290854052134913",
         "video": "https://storage.googleapis.com/klubs/lotuslight/6/2.joy_jo_lotus_lights.mp4"
     },
