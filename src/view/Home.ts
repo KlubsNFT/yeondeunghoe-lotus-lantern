@@ -76,7 +76,7 @@ export default class Home implements View {
             let videoDisplay: DomNode<HTMLVideoElement>
 
             this.artistList.append(
-                el("a", { href: data.url },
+                el("a", { href: data.url, target: "_blank" },
                     el(".image-container",
                         videoDisplay = el("video.art", { loop: "true", preload: "none", "muted": "" },
                             el("source", { src: data.video, type: "video/mp4" })
