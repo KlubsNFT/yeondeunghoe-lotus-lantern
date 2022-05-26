@@ -92,6 +92,7 @@ export default class Home implements View {
             });
 
             videoDisplay.onDom("mouseover", () => {
+                videoDisplay.domElement.muted = true;
                 videoDisplay.domElement.play();
             });
 
@@ -123,6 +124,7 @@ export default class Home implements View {
         });
 
         videoDisplay.onDom("mouseover", () => {
+            videoDisplay.domElement.muted = true;
             videoDisplay.domElement.play();
         });
 
