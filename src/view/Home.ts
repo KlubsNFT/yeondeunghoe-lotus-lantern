@@ -78,7 +78,7 @@ export default class Home implements View {
             this.artistList.append(
                 el("a", { href: data.url },
                     el(".image-container",
-                        videoDisplay = el("video.art", { loop: "true", preload: "none" },
+                        videoDisplay = el("video.art", { loop: "true", preload: "none", "muted": "" },
                             el("source", { src: data.video, type: "video/mp4" })
                         ),
                         el("p", msg(data.name)),
@@ -94,6 +94,10 @@ export default class Home implements View {
             videoDisplay.onDom("mouseover", () => {
                 videoDisplay.domElement.play();
             });
+
+            videoDisplay.onDom("mouseout", () => {
+                videoDisplay.domElement.pause();
+            });
         });
 
         this.loadMisang();
@@ -105,7 +109,7 @@ export default class Home implements View {
         this.misangList.append(
             el("a.misang-container", { href: "https://mrmisang.com/", target: "_blank" },
                 el(".image-container",
-                    videoDisplay = el("video.art", { loop: "true", preload: "none" },
+                    videoDisplay = el("video.art", { loop: "true", preload: "none", "muted": "" },
                         el("source", { src: "https://storage.googleapis.com/klubs/lotuslight/screen_final/mr.misang_odddream.mp4", type: "video/mp4" })
                     ),
                     el("p", msg("ARTISTS_TITLE31")),
@@ -120,6 +124,10 @@ export default class Home implements View {
 
         videoDisplay.onDom("mouseover", () => {
             videoDisplay.domElement.play();
+        });
+
+        videoDisplay.onDom("mouseout", () => {
+            videoDisplay.domElement.pause();
         });
     }
 
