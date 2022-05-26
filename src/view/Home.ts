@@ -103,7 +103,7 @@ export default class Home implements View {
         let videoDisplay: DomNode<HTMLVideoElement>
 
         this.misangList.append(
-            el("a.misang-container", { href: "https://mrmisang.com/" },
+            el("a.misang-container", { href: "https://mrmisang.com/", target: "_blank" },
                 el(".image-container",
                     videoDisplay = el("video.art", { loop: "true", preload: "none" },
                         el("source", { src: "https://storage.googleapis.com/klubs/lotuslight/screen_final/mr.misang_odddream.mp4", type: "video/mp4" })
